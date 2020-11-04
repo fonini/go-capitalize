@@ -1,6 +1,7 @@
 package capitalize
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
@@ -123,4 +124,11 @@ func TestValues_WithOptions(t *testing.T) {
 	for _, tt := range tests {
 		testValueWithOptions(t, tt.input, tt.want, options)
 	}
+}
+
+func ExampleCapitalize() {
+	name, _ := Capitalize("jonnas fonini")
+	fmt.Print(name)
+
+	// Output: "Jonnas Fonini"
 }

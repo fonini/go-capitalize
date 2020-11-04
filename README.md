@@ -1,5 +1,7 @@
 # go-capitalize #
 
+[![GoDoc](https://img.shields.io/static/v1?label=godoc&message=reference&color=blue)](https://pkg.go.dev/github.com/fonini/go-capitalize/capitalize)
+
 go-capitalize is a Go library for capitalizing proper names.
 
 ## Usage ##

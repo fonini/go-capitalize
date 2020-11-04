@@ -130,5 +130,5 @@ func ExampleCapitalize() {
 	name, _ := Capitalize("jonnas fonini")
 	fmt.Print(name)
 
-	// Output: "Jonnas Fonini"
+	// Output: Jonnas Fonini
 }

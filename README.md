@@ -16,8 +16,17 @@ The capitalize package exports a single `Capitalize()` function. A simple exampl
 
 ```go
 name, _ := capitalize.Capitalize("jonnas fonini")
-fmt.Print(name) // will output: "Jonnas Fonini"
+fmt.Println(name) // will output: "Jonnas Fonini"
 
 name, _ = capitalize.Capitalize("ruA DA praça xv")
-fmt.Print(name) // will output: "Rua da Praça XV"
+fmt.Println(name) // will output: "Rua da Praça XV"
+
+// With additional exceptions
+options := capitalize.Options{
+    Exceptions: []string{"of"},
+}
+
+name, _ = capitalize.Capitalize("gørvel fadersdotter of giske", options)
+fmt.Println(name) // will output: "Gørvel Fadersdotter of Giske"
+
 ```

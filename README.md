@@ -30,3 +30,8 @@ name, _ = capitalize.Capitalize("gørvel fadersdotter of giske", options)
 fmt.Println(name) // will output: "Gørvel Fadersdotter of Giske"
 
 ```
+
+## Thanks ##
+
+Thanks to [Fausto Gonçalves Cintra](https://twitter.com/g0nc1n) for the original PHP code.
+

@@ -25,10 +25,14 @@ fmt.Println(name) // will output: "Rua da Praça XV"
 // With additional exceptions
 options := capitalize.Options{
     Exceptions: []string{"of"},
+    Surnames: []string{"McElroy"},
 }
 
 name, _ = capitalize.Capitalize("gørvel fadersdotter of giske", options)
 fmt.Println(name) // will output: "Gørvel Fadersdotter of Giske"
+
+name, _ = capitalize.Capitalize("john mcelroy", options)
+fmt.Println(name) // will output: "John McElroy"
 
 ```
 

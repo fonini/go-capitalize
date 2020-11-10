@@ -53,6 +53,24 @@ func TestValues_BrazilianNames(t *testing.T) {
 	}
 }
 
+func TestValues_EnglishNames(t *testing.T) {
+	tests := []struct {
+		input string
+		want  string
+	}{
+		{"WILLIAM JR", "William Jr"},
+		{"Mark O'DONNELL", "Mark O'Donnell"},
+		{"TIMOTHY P. O'TOOLE", "Timothy P. O'Toole"},
+		{"john mccain", "John McCain"},
+		{"brian johnson-smith", "Brian Johnson-Smith"},
+		{"PAUL SULLIVAN", "Paul Sullivan"},
+	}
+
+	for _, tt := range tests {
+		testValue(t, tt.input, tt.want)
+	}
+}
+
 func TestValues_SpanishNames(t *testing.T) {
 	tests := []struct {
 		input string
@@ -61,6 +79,7 @@ func TestValues_SpanishNames(t *testing.T) {
 		{"miguel del castillo", "Miguel del Castillo"},
 		{"DOM QUIXOTE DE LA MANCHA", "Dom Quixote de la Mancha"},
 		{"gimnasia y  ESGrima", "Gimnasia y Esgrima"},
+		{"JORGE DE LA ROSA", "Jorge de la Rosa"},
 	}
 
 	for _, tt := range tests {
@@ -75,6 +94,7 @@ func TestValues_ItalianNames(t *testing.T) {
 	}{
 		{"martino iii della torre", "Martino III della Torre"},
 		{"sant'ilARio dello IONIO", "Sant'Ilario dello Ionio"},
+		{"Gigi D'AGOSTINO", "Gigi D'Agostino"},
 	}
 
 	for _, tt := range tests {
@@ -115,10 +135,12 @@ func TestValues_WithOptions(t *testing.T) {
 	}{
 		{"gørvel fadersdotter of giske", "Gørvel Fadersdotter of Giske"},
 		{"BREDO VON MUNTHE AF MORGENSTIERNE", "Bredo von Munthe af Morgenstierne"},
+		{"joHN mceLROY", "John McElroy"},
 	}
 
 	options := Options{
 		Exceptions: []string{"of", "af"},
+		Surnames:   []string{"McElroy"},
 	}
 
 	for _, tt := range tests {
